@@ -1,19 +1,14 @@
 """
-To use this script, first run this to fit your first model:
-
+Fit model:
   python kfkd.py fit
 
-Then train a bunch of specialists that intiliaze their weights from
-your first model:
-
+Fit specialists:
   python kfkd.py fit_specialists net.pickle
 
-Plot their error curves:
-
+Plot error curves
   python kfkd.py plot_learning_curves net-specialists.pickle
 
-And finally make predictions to submit to Kaggle:
-
+Generate predictions
   python kfkd.py predict net-specialists.pickle
 """
 
@@ -40,7 +35,7 @@ except ImportError:
     MaxPool2DLayer = layers.MaxPool2DLayer
 
 
-sys.setrecursionlimit(10000)  # for pickle...
+sys.setrecursionlimit(10000)  # for pickle
 np.random.seed(42)
 
 FTRAIN = './data/train.csv'
